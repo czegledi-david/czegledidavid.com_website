@@ -18,7 +18,7 @@ export default function RootLayout({
         <div className="max-w-3xl mx-auto px-6 py-20">
           
           <nav className="flex justify-between items-center mb-16 border-b border-slate-800 pb-6">
-            <div className="text-xl font-bold tracking-tight text-white">CD. (BETA)</div>
+            <div className="text-xl font-bold tracking-tight text-white">CD. (BETA). TESZT TESZT TESZT</div>
             <div className="space-x-6 text-sm font-medium text-slate-400">
               <Link href="/" className="hover:text-cyan-400 transition-colors">Rólam</Link>
               <Link href="/setup" className="hover:text-cyan-400 transition-colors">Setup</Link>
