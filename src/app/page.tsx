@@ -1,4 +1,6 @@
 import Link from "next/link";
+import Typewriter from "@/components/Typewriter";
+
 
 export default function Home() {
   return (
@@ -7,7 +9,7 @@ export default function Home() {
       {/* --- 1. HERO SZEKCIÓ (A fő bemutatkozás) --- */}
       <section className="space-y-6">
         <h1 className="text-5xl font-extrabold tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500">
-          Czeglédi Dávid
+          <Typewriter text="Czeglédi Dávid" speed={150} />
         </h1>
         <p className="text-xl text-slate-400 leading-relaxed">
           
