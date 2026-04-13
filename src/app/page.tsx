@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export default function Home() {
   return (
     <div className="space-y-16">
@@ -22,6 +24,16 @@ export default function Home() {
             <br /><br />
             Jelenleg a Miskolci Egyetemen tanulok Programtervező Informatikus szakon, 
             illetve óraadóként dolgozok a Remenyik Zsigmond Technikumban.
+          </p>
+        </div>
+      </section>
+
+      <section id="about" className="space-y-6 scroll-mt-24">
+        <h2 className="text-2xl font-bold text-white tracking-tight">Weboldal Forráskódja</h2>
+        
+        <div className="p-8 bg-slate-900/50 border border-slate-800 rounded-xl font-mono text-slate-300 leading-relaxed">
+          <p>
+            <Link href="https://github.com/czegledi-david/czegledidavid.com_website" target='_blank' className="hover:text-cyan-400 transition-colors">Github Repository</Link>
           </p>
         </div>
       </section>
