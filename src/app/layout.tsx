@@ -3,7 +3,7 @@ import "./globals.css";
 import Link from 'next/link';
 
 export const metadata: Metadata = {
-  title: "Czeglédi Dávid",
+  title: "Czeglédi Dávid (BETA)",
   description: "Személyes tudásbázis és portfólió",
 };
 
