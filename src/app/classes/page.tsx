@@ -28,7 +28,7 @@ export default function Tananyagok() {
           
           {/* Egy tananyag kártya/sor */}
           <Link
-            href="/lessons/9a" 
+            href="/classes/9a" 
             className="group p-4 bg-slate-900/50 border border-slate-800 rounded-lg hover:border-cyan-500/50 transition-all"
           >
             <div className="flex justify-between items-center">
@@ -43,7 +43,7 @@ export default function Tananyagok() {
           </Link>
 
           <Link
-            href="/lessons/10a" 
+            href="/classes/10a" 
             className="group p-4 bg-slate-900/50 border border-slate-800 rounded-lg hover:border-cyan-500/50 transition-all"
           >
             <div className="flex justify-between items-center">
@@ -58,7 +58,7 @@ export default function Tananyagok() {
           </Link>
 
           <Link
-            href="/lessons/11a" 
+            href="/classes/11a" 
             className="group p-4 bg-slate-900/50 border border-slate-800 rounded-lg hover:border-cyan-500/50 transition-all"
           >
             <div className="flex justify-between items-center">
@@ -73,7 +73,7 @@ export default function Tananyagok() {
           </Link>
 
           <Link
-            href="/lessons/13a" 
+            href="/classes/13a" 
             className="group p-4 bg-slate-900/50 border border-slate-800 rounded-lg hover:border-cyan-500/50 transition-all"
           >
             <div className="flex justify-between items-center">

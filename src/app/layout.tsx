@@ -22,7 +22,7 @@ export default function RootLayout({
           <div className="space-x-6 text-sm font-medium text-slate-400">
             <Link href="/" className="hover:text-cyan-400 transition-colors">Rólam</Link>
             <Link href="/setup" className="hover:text-cyan-400 transition-colors">Setup</Link>
-            <Link href="/lessons" className="hover:text-cyan-400 transition-colors">Tananyagok</Link>
+            <Link href="/classes" className="hover:text-cyan-400 transition-colors">Tananyagok</Link>
           </div>
         </nav>
 

@@ -5,7 +5,7 @@ export default function TizenegyedikA() {
     <div className="space-y-8">
       {/* Vissza gomb a főoldalra/tananyagokra */}
       <div>
-        <Link href="/lessons" className="text-kiemeles hover:text-white transition-colors font-medium">
+        <Link href="/classes" className="text-kiemeles hover:text-white transition-colors font-medium">
           &larr; Vissza a tananyagokhoz
         </Link>
       </div>
