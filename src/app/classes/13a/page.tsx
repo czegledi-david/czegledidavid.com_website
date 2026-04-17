@@ -20,7 +20,6 @@ export default function TizenharmadikA() {
 
       <div className="space-y-4">
         
-        
         <div className="glass-card">
           <h2 className="text-xl font-semibold text-white mb-2">Github Repository</h2>
           <p className="text-slate-300 mb-4">
@@ -33,10 +32,6 @@ export default function TizenharmadikA() {
           </div>
         </div>
 
-        
-      
-      
-      
       </div>
 
       <div className="space-y-4">
@@ -46,32 +41,32 @@ export default function TizenharmadikA() {
           <p className="text-slate-300 mb-4">
             Vizsga segédlet és megoldása
           </p>
-          <div className="flex gap-4">
+          
+          {/* JAVÍTOTT RÉSZ: Mobilon oszlop (flex-col), monitoron sor (md:flex-row) és sortörés (flex-wrap) */}
+          <div className="flex flex-col gap-3 mt-4">
             <a href="/lessons/C_sharp_vizsga.pdf" 
                target="_blank"
                rel="noopener noreferrer"
-               className="bg-slate-800 hover:bg-slate-700 text-slate-300 border border-slate-600 px-4 py-2.5 rounded-lg text-sm transition-all flex items-center gap-3 shadow-sm w-full sm:w-fit group">
+               className="bg-slate-800 hover:bg-slate-700 text-slate-300 border border-slate-600 px-4 py-2.5 rounded-lg text-sm transition-all flex items-center justify-center sm:justify-start gap-3 shadow-sm w-full sm:w-fit group">
               <span className="text-lg group-hover:scale-110 transition-transform">📄</span> 
               <span>Feladatlap megnyitása</span>
             </a>
             
-            <a href="/solution"
-               className="bg-slate-800 hover:bg-slate-700 text-slate-300 border border-slate-600 px-4 py-2.5 rounded-lg text-sm transition-all flex items-center gap-3 shadow-sm w-full sm:w-fit group">
+            <Link href="/classes/13a/solution13a"
+               className="bg-slate-800 hover:bg-slate-700 text-slate-300 border border-slate-600 px-4 py-2.5 rounded-lg text-sm transition-all flex items-center justify-center sm:justify-start gap-3 shadow-sm w-full sm:w-fit group">
               <span className="text-lg group-hover:scale-110 transition-transform">💻</span> 
               <span>Megoldás (Konzolos)</span>
-            </a>
+            </Link>
 
             <a href="/sources/pekseg.txt" 
               download="pekseg.txt"
-              className="bg-slate-800 hover:bg-slate-700 text-slate-300 border border-slate-600 px-4 py-2 rounded-lg text-sm transition-all flex items-center gap-2 shadow-sm">
-              <span>📥</span> peksegek.txt letöltése
+              className="bg-slate-800 hover:bg-slate-700 text-slate-300 border border-slate-600 px-4 py-2.5 rounded-lg text-sm transition-all flex items-center justify-center sm:justify-start gap-3 shadow-sm w-full sm:w-fit group">
+              <span className="text-lg group-hover:scale-110 transition-transform">📥</span> 
+              <span>peksegek.txt letöltése</span>
             </a>
-
-            
           </div>
         </div>
 
-        
       </div>
 
     </div>
