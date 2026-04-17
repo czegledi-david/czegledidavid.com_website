@@ -3,14 +3,12 @@ import Link from "next/link";
 export default function TizedikA() {
   return (
     <div className="space-y-8">
-      {/* Vissza gomb a főoldalra/tananyagokra */}
       <div>
         <Link href="/classes" className="text-kiemeles hover:text-white transition-colors font-medium">
           &larr; Vissza a tananyagokhoz
         </Link>
       </div>
 
-      {/* Oldal címe */}
       <div className="space-y-2">
         <h1 className="text-4xl font-bold text-white tracking-tight">Programozás alapok 10.A</h1>
         <p className="text-slate-400 text-lg">

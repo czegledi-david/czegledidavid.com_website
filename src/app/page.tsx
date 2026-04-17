@@ -6,7 +6,6 @@ export default function Home() {
   return (
     <div className="space-y-16">
       
-      {/* --- 1. HERO SZEKCIÓ (A fő bemutatkozás) --- */}
       <section className="space-y-6">
         <h1 className="text-5xl font-extrabold tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500">
           <Typewriter text="Czeglédi Dávid" speed={150} />
@@ -16,7 +15,6 @@ export default function Home() {
         </p>
       </section>
 
-      {/* --- 2. RÓLAM SZEKCIÓ (A terminálos doboz) --- */}
       <section id="about" className="space-y-6 scroll-mt-24">
         <h2 className="text-2xl font-bold text-white tracking-tight">Rólam</h2>
         

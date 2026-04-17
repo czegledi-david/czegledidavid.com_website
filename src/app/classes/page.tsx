@@ -1,11 +1,9 @@
-// src/app/tananyagok/page.tsx
 import Link from "next/link";
 
 export default function Tananyagok() {
   return (
     <div className="space-y-10">
       
-      {/* CÍMSOR SZEKCIÓ */}
       <div className="space-y-4">
         <h1 className="text-4xl font-extrabold tracking-tight text-white">
           Tananyagok
@@ -15,18 +13,14 @@ export default function Tananyagok() {
         </p>
       </div>
 
-      {/* ÉV SZEKCIÓ - 2025-2026 */}
       <section className="space-y-6">
         <div className="flex items-center gap-4">
           <h2 className="text-2xl font-semibold text-cyan-400 whitespace-nowrap">2025-2026</h2>
-          {/* Ez a div csak egy díszítő vonal az évszám mellett */}
           <div className="h-px bg-slate-800 w-full"></div>
         </div>
 
-        {/* LINK LISTA */}
         <div className="grid gap-4">
           
-          {/* Egy tananyag kártya/sor */}
           <Link
             href="/classes/9a" 
             className="group p-4 bg-slate-900/50 border border-slate-800 rounded-lg hover:border-cyan-500/50 transition-all"

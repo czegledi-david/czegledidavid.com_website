@@ -6,11 +6,11 @@ import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { vscDarkPlus } from "react-syntax-highlighter/dist/esm/styles/prism";
 
 export default function CsharpPeldak() {
-  // Külön állapotok kellenek a két gombnak, hogy ne egyszerre írják ki, hogy "Másolva!"
+  
   const [masolvaRegi, setMasolvaRegi] = useState(false);
   const [masolvaUj, setMasolvaUj] = useState(false);
 
-  // === 1. IDE ILLESZD BE A RÉGI KÓDOT ===
+  
   const regiKod = String.raw`using System;
 using System.Collections.Generic;
 using System.IO;
@@ -207,7 +207,6 @@ namespace PeksegKonzol
 }
 `;
 
-  // === 2. EZ AZ ÚJ KÓD (Amit elküldtél) ===
   const ujKod = String.raw`namespace Pekseg
 {
     //Egy osztály egyetlen sort reprezentál a txt fájlból
@@ -398,14 +397,12 @@ namespace PeksegKonzol
     }
 }`;
 
-  // Másoló függvény a RÉGI kódhoz
   const masolasRegi = () => {
     navigator.clipboard.writeText(regiKod);
     setMasolvaRegi(true);
     setTimeout(() => { setMasolvaRegi(false); }, 2000);
   };
 
-  // Másoló függvény az ÚJ kódhoz
   const masolasUj = () => {
     navigator.clipboard.writeText(ujKod);
     setMasolvaUj(true);
@@ -413,10 +410,8 @@ namespace PeksegKonzol
   };
 
   return (
-    // JAVÍTÁS: max-w korlát eltávolítva! w-full és extra széles padding (xl:px-24), hogy kinyúljon a szélek felé
     <div className="w-[100vw] relative left-1/2 -translate-x-1/2 px-4 md:px-16 xl:px-32 py-16">
       
-      {/* Vissza gomb a konténeren belül */}
       <Link href="/classes/13a" className="text-cyan-400 hover:text-cyan-300 transition-colors mb-8 inline-flex items-center gap-2">
         &larr; Vissza
       </Link>
@@ -425,15 +420,12 @@ namespace PeksegKonzol
         Vizsga Megoldás
       </h1>
       
-      {/* GRID RENDSZER: Mobilon 1 oszlop (egymás alatt), nagy monitoron (xl) 2 oszlop egymás mellett */}
       <div className="grid grid-cols-1 xl:grid-cols-2 gap-8">
         
-        {/* ================= 1. DOBOZ: RÉGI KÓD ================= */}
         <div className="flex flex-col gap-4">
           <h2 className="text-xl font-semibold text-slate-300 ml-2">Eredeti megoldás</h2>
           <div className="relative rounded-xl overflow-hidden border border-slate-700 shadow-2xl h-full">
             
-            {/* RÉGI MÁSOLÁS GOMB */}
             <button
               onClick={masolasRegi}
               className="absolute top-4 right-4 z-10 bg-slate-800 hover:bg-slate-700 text-slate-300 text-xs px-3 py-2 rounded-md transition-all border border-slate-600 flex items-center gap-2"
@@ -459,12 +451,10 @@ namespace PeksegKonzol
           </div>
         </div>
 
-        {/* ================= 2. DOBOZ: ÚJ KÓD ================= */}
         <div className="flex flex-col gap-4">
           <h2 className="text-xl font-semibold text-cyan-400 ml-2">Javított (Refaktorált) megoldás</h2>
           <div className="relative rounded-xl overflow-hidden border border-slate-700 shadow-2xl h-full border-t-2 border-t-cyan-500">
             
-            {/* ÚJ MÁSOLÁS GOMB */}
             <button
               onClick={masolasUj}
               className="absolute top-4 right-4 z-10 bg-slate-800 hover:bg-slate-700 text-slate-300 text-xs px-3 py-2 rounded-md transition-all border border-slate-600 flex items-center gap-2"
