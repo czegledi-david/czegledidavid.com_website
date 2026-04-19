@@ -1,10 +1,11 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import Link from 'next/link';
+import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
   title: "Czeglédi Dávid",
-  description: "Személyes tudásbázis és portfólió",
+  description: "Tudásbázis és portfólió",
 };
 
 export default function RootLayout({
@@ -23,12 +24,11 @@ export default function RootLayout({
 
         <nav className="w-full flex flex-col sm:flex-row sm:justify-between items-center px-6 sm:px-16 py-6 border-b border-slate-800 backdrop-blur-sm gap-4 sm:gap-0">
           <div className="text-xl font-bold tracking-tight text-white">CD</div>
-          
           <div className="flex flex-wrap justify-center gap-x-6 gap-y-2 text-sm font-medium text-slate-400">
             <Link href="/" className="hover:text-cyan-400 transition-colors">Rólam</Link>
             <Link href="/setup" className="hover:text-cyan-400 transition-colors">Setup</Link>
             <Link href="/classes" className="hover:text-cyan-400 transition-colors">Tananyagok</Link>
-            <Link href="/tutorials" className="hover:text-cyan-400 transition-colors">Tutorials</Link>
+            <Link href="/tutorials" className="hover:text-cyan-400 transition-colors">Tutorials (BETA)</Link> 
           </div>
         </nav>
 
@@ -36,8 +36,7 @@ export default function RootLayout({
           {children}
         </main>
 
-        <footer className="w-full border-t border-slate-800/60 bg-slate-900/20 backdrop-blur-md mt-10">
-        </footer>
+        <Footer />
 
       </body>
     </html>
