@@ -27,7 +27,6 @@ export default function RootLayout({
           <div className="flex flex-wrap justify-center gap-x-6 gap-y-2 text-sm font-medium text-slate-400">
             <Link href="/" className="hover:text-cyan-400 transition-colors">Rólam</Link>
             <Link href="/setup" className="hover:text-cyan-400 transition-colors">Setup</Link>
-            <Link href="/homelab" className="hover:text-cyan-400 transition-colors">Homelab</Link>
             <Link href="/classes" className="hover:text-cyan-400 transition-colors">Tananyagok</Link>
             <Link href="/tutorials" className="hover:text-cyan-400 transition-colors">Tutorials</Link> 
           </div>
