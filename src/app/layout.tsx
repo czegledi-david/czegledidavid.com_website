@@ -1,11 +1,10 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import Link from 'next/link';
-import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
   title: "Czeglédi Dávid",
-  description: "Tudásbázis és portfólió",
+  description: "Személyes tudásbázis és portfólió",
 };
 
 export default function RootLayout({
@@ -22,13 +21,14 @@ export default function RootLayout({
           <div className="absolute bottom-[-20%] right-[-10%] w-[60vw] h-[60vw] max-w-[600px] max-h-[600px] rounded-full bg-blue-900/10 blur-[100px] md:blur-[150px]" />
         </div>
 
-        <nav className="w-full flex justify-between items-center px-8 sm:px-16 py-6 border-b border-slate-800 backdrop-blur-sm">
+        <nav className="w-full flex flex-col sm:flex-row sm:justify-between items-center px-6 sm:px-16 py-6 border-b border-slate-800 backdrop-blur-sm gap-4 sm:gap-0">
           <div className="text-xl font-bold tracking-tight text-white">CD</div>
-          <div className="space-x-6 text-sm font-medium text-slate-400">
+          
+          <div className="flex flex-wrap justify-center gap-x-6 gap-y-2 text-sm font-medium text-slate-400">
             <Link href="/" className="hover:text-cyan-400 transition-colors">Rólam</Link>
             <Link href="/setup" className="hover:text-cyan-400 transition-colors">Setup</Link>
             <Link href="/classes" className="hover:text-cyan-400 transition-colors">Tananyagok</Link>
-            <Link href="/tutorials" className="hover:text-cyan-400 transition-colors">Tutorials (BETA)</Link> 
+            <Link href="/tutorials" className="hover:text-cyan-400 transition-colors">Tutorials</Link>
           </div>
         </nav>
 
@@ -36,7 +36,8 @@ export default function RootLayout({
           {children}
         </main>
 
-        <Footer />
+        <footer className="w-full border-t border-slate-800/60 bg-slate-900/20 backdrop-blur-md mt-10">
+        </footer>
 
       </body>
     </html>
