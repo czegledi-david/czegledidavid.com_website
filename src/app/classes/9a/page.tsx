@@ -4,7 +4,6 @@ export default function KilencedikA() {
   return (
     <div className="max-w-5xl mx-auto space-y-10 py-10">
       
-      {/* FEJLÉC ÉS VISSZA GOMB */}
       <div className="space-y-6">
         <Link 
           href="/classes" 

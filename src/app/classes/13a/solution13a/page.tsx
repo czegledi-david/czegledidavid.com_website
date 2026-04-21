@@ -443,7 +443,7 @@ namespace PeksegKonzol
                 paddingTop: '3rem',
                 fontSize: '0.9rem',
                 backgroundColor: '#0f172a',
-                height: '100%', // Kitölti a rendelkezésre álló helyet
+                height: '100%', 
               }}
             >
               {regiKod}

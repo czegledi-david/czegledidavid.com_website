@@ -42,3 +42,6 @@ next-env.d.ts
 
 webhook.js
 deploy.sh
+
+# claude code local settings
+.claude/

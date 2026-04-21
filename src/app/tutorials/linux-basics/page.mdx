@@ -1,0 +1,96 @@
+import Link from "next/link";
+import CommandCard, { FlagList, Flag } from "@/components/CommandCard";
+
+<div className="max-w-4xl mx-auto space-y-10 py-10">
+
+<Link
+  href="/tutorials"
+  className="text-cyan-400 hover:text-white transition-colors font-medium flex items-center gap-2 w-fit no-underline"
+>
+  &larr; Vissza a tutorialokhoz
+</Link>
+
+<div className="space-y-4">
+
+# Linux Parancsok Összefoglaló
+
+<div className="flex gap-4 text-sm text-slate-500">
+  <span>📅 2026. Április</span>
+  <span className="bg-cyan-900/30 text-cyan-400 px-2 rounded-md font-medium">Jegyzet</span>
+</div>
+
+</div>
+
+Ez az összefoglaló a leggyakrabban használt Linux terminál parancsokat és azok legfontosabb kapcsolóit tartalmazza. Tökéletes segédanyag a mindennapi munkához, a terminálban való magabiztos navigáláshoz, valamint a vizsgákra való felkészüléshez.
+
+<div className="grid gap-6 mt-8">
+
+<CommandCard command="pwd">
+
+Kiírja az aktuális könyvtár abszolút elérési útvonalát.
+
+</CommandCard>
+
+<CommandCard command="cd" arg="<könyvtár>">
+
+Belép a paraméterként átadott könyvtárba. Ha nem adunk meg könyvtárat, akkor a home könyvtárba lép be.
+
+</CommandCard>
+
+<CommandCard command="ls" arg="[kapcsoló]">
+
+Kilistázza a könyvtár tartalmát. Abc szerint növekvő sorrendben listáz.
+
+<FlagList>
+  <Flag flag="-a">rejtett fájlokat is listáz.</Flag>
+  <Flag flag="-l">hosszú, részletes leírás.</Flag>
+  <Flag flag="-h">olvasható fájlméret (human-readable).</Flag>
+  <Flag flag="-t">módosítási idő szerinti rendezés.</Flag>
+</FlagList>
+
+</CommandCard>
+
+<CommandCard command="mkdir" arg="[kapcsoló]">
+
+Létrehozza a paraméterben átadott nevű könyvtárat, ha még nem létezik. A `-p` kapcsolóval a teljes útvonalat létrehozza.
+
+</CommandCard>
+
+<CommandCard command="cp" arg="[kapcsoló]">
+
+Átmásolja a forrás fájlt a megadott helyre. Könyvtárak másolásához a `-r` (rekurzív) kapcsoló szükséges.
+
+</CommandCard>
+
+<CommandCard command="mv">
+
+Áthelyezi vagy átnevezi a fájlokat és könyvtárakat.
+
+</CommandCard>
+
+<CommandCard command="rm" arg="[kapcsoló]">
+
+Letörli a megadott fájlt vagy könyvtárat. Vigyázat: a törlés végleges! Mappákhoz használd a `-rf` kapcsolót.
+
+</CommandCard>
+
+<CommandCard command="cat" arg="<fájl>">
+
+Kiírja a megadott fájl teljes tartalmát közvetlenül a terminálba. Gyors belenézésre ideális.
+
+</CommandCard>
+
+<CommandCard command="nano" arg="<fájl>">
+
+Megnyitja a beépített, egyszerű szövegszerkesztőt. Lehetővé teszi fájlok létrehozását és módosítását a terminálon belül.
+
+</CommandCard>
+
+</div>
+
+<div className="pt-10 border-t border-slate-800 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-slate-500 italic mt-12">
+  <p>Utoljára módosítva: 2026.04.19.</p>
+  <p>Készítette: Czeglédi Dávid</p>
+</div>
+
+</div>

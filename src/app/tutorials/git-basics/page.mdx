@@ -1,0 +1,179 @@
+import Link from "next/link";
+import Cmd from "@/components/Cmd";
+
+<div className="max-w-4xl mx-auto space-y-10 py-10">
+
+<Link
+  href="/tutorials"
+  className="text-cyan-400 hover:text-white transition-colors font-medium flex items-center gap-2 w-fit no-underline"
+>
+  &larr; Vissza a tutorialokhoz
+</Link>
+
+<div className="space-y-4">
+
+# Git és GitHub Mesterkurzus
+
+<div className="flex gap-4 text-sm text-slate-500">
+  <span>📅 2026. Április</span>
+  <span>⏱️ 60 perc olvasás</span>
+  <span className="bg-cyan-900/30 text-cyan-400 px-2 rounded-md font-medium">Útmutató</span>
+</div>
+
+</div>
+
+<article className="max-w-none text-slate-300 leading-relaxed space-y-6">
+
+A szoftverfejlesztésben nem létezik "beadando_vegleges_v3_tenylegkesz.zip". Helyette verziókövetést használunk. A Git egy elosztott verziókövető rendszer, amely másodpercre pontosan megjegyzi a kódod minden egyes változását, lehetővé teszi a csapatmunkát, és biztosítja, hogy soha semmi ne vesszen el véglegesen.
+
+## 1. Az Első Lépések: Globális Beállítás és Inicializálás
+
+Mielőtt elkezdenél dolgozni, be kell mutatkoznod a Gitnek. Ezt a gépeden csak életében egyszer kell megtenned. Ezek a nevek fognak megjelenni a változtatások (commitok) mellett.
+
+<Cmd>{[
+  'git config --global user.name "Vezeteknev Keresztnev"',
+  'git config --global user.email "email@cimed.hu"'
+]}</Cmd>
+
+Ha elkezdesz egy új projektet a gépeden (egy mappában), a Git alapból nem figyeli azt. A megfigyelés bekapcsolásához a projekt gyökérmappájában kell kiadnod a következő parancsot:
+
+<Cmd>git init</Cmd>
+
+Ez létrehoz egy rejtett `.git` mappát. Ebben tárolja a Git az "időgépet". Ha ezt a mappát törlöd, a projekt megmarad, de a Git történelem örökre elvész.
+
+## 2. A Napi Munkafolyamat: Módosítás, Színpad, Véglegesítés
+
+A Git három fő területre osztja a munkádat: Munkakönyvtár (Working Directory), Színpad (Staging Area) és a Véglegesített Tároló (Repository).
+
+### A radar képernyője (git status)
+
+Bármikor elveszve érzed magad, ez a parancs megmondja, mi történik éppen. Megmutatja a módosított, az új, és a törölt fájlokat. Ezt a parancsot fogod a leggyakrabban használni.
+
+<Cmd>git status</Cmd>
+
+### Fel a színpadra (git add)
+
+Ha átírtál egy fájlt, a Git látja, de magától nem menti el. Először "fel kell tenned a színpadra". Ez jelzi, hogy ezeket a változtatásokat bele akarod tenni a következő mentésbe.
+
+<Cmd>{[
+  'git add index.html',
+  'git add .'
+]}</Cmd>
+
+A pont (`.`) a parancs végén azt jelenti: "Minden módosított fájlt adj hozzá egyszerre".
+
+### A mentési pont létrehozása (git commit)
+
+A színpadon lévő fájlokból egy véglegesített "fényképet" készítünk. Kötelező hozzáadni egy üzenetet, ami röviden (jelen időben, felszólító módban) leírja, mit csináltál.
+
+<Cmd>git commit -m "Navigacios menu hozzaadasa"</Cmd>
+
+## 3. Időutazás és Nyomozás
+
+### Ki, mit, mikor csinált? (git log)
+
+Kilistázza a projekt teljes történelmét. Látod a commitokat, azok egyedi azonosítóját (hash), a készítőt, és az időpontot. Kilépni belőle a `q` betűvel tudsz.
+
+<Cmd>{[
+  'git log',
+  'git log --oneline'
+]}</Cmd>
+
+### Mi változott pontosan? (git diff)
+
+Ha kiadod a `git status` parancsot, és látod, hogy a `style.css` módosult, de nem emlékszel mit írtál át benne, a diff parancs sorra pontosan, piros-zöld színnel megmutatja a különbséget az utolsó mentés óta.
+
+<Cmd>git diff</Cmd>
+
+## 4. GitHub és Távoli Tárolók (Remote)
+
+Eddig a pontig minden csak a te saját számítógépeden történt. Ha tönkremegy a vinyód, a kód is elveszik. A GitHub egy olyan felhő szolgáltatás, ami a Git repóidat tárolja.
+
+### Mások kódjának letöltése (git clone)
+
+Ha egy meglévő projekthez csatlakozol, nem `init`-el kezdesz, hanem letöltöd a projektet a szerverről. Ez létrehozza a mappát, és azonnal beállítja a Gitet.
+
+<Cmd>git clone https://github.com/felhasznalo/projekt.git</Cmd>
+
+### Saját projekt feltöltése (remote és push)
+
+Ha helyben kezdtél egy projektet, és utólag csináltál neki egy üres repót a GitHubon, először össze kell kötnöd a kettőt. A távoli szervert hagyományosan `origin`-nek nevezzük.
+
+<Cmd>{[
+  'git remote add origin https://github.com/te/projekt.git',
+  'git push -u origin main'
+]}</Cmd>
+
+A push paranccsal feltolod a változtatásokat a felhőbe. A `-u` csak első alkalommal kell, utána elég annyit írni, hogy `git push`.
+
+### Új kód lehúzása a csapatról (git pull)
+
+Ha valaki más (vagy te egy másik gépen) feltöltött valami újat a GitHubra, azt ezzel a paranccsal tudod a saját gépedre lehúzni, szinkronizálva az állapotot.
+
+<Cmd>git pull</Cmd>
+
+## 5. Párhuzamos Univerzumok: Elágazások (Branching)
+
+A fő ágat általában `main`-nek vagy `master`-nek hívják. Ezen a kódon sosem szabad kísérletezni. Ha egy új funkción dolgozol, mindig létrehozol egy új ágat (branch). Ezen az ágon nyugodtan elronthatsz bármit, a fő ág érintetlen marad.
+
+### Ágak kezelése
+
+<Cmd>{[
+  'git branch',
+  'git branch uj-gomb',
+  'git checkout uj-gomb',
+  'git checkout -b sötét-mód'
+]}</Cmd>
+
+A `checkout -b` a leggyakoribb: létre is hozza az ágat, és azonnal át is léptet rá.
+
+### Összeolvasztás (git merge)
+
+Ha kész vagy az új funkcióval az ágadon, vissza kell menned a fő ágra, és "beolvasztani" a munkádat.
+
+<Cmd>{[
+  'git checkout main',
+  'git merge sötét-mód'
+]}</Cmd>
+
+## 6. A Láthatatlanság Köpenye: .gitignore
+
+Vannak fájlok, amiknek sosem szabad felkerülniük a GitHubra. Ilyenek a jelszavakat tartalmazó `.env` fájlok, vagy a több gigabájtos, automatikusan generált mappák (mint a `node_modules`).
+
+Hozz létre egy fájlt `.gitignore` néven a projekt gyökerében, és írd bele azokat a fájl/mappa neveket, amiket a Gitnek ignorálnia kell. A Git ezután úgy tesz, mintha ezek nem is léteznének (nem jelennek meg a statusban, nem lehet őket commitolni).
+
+## 7. Pánikgomb: Hibák Javítása
+
+Bármit elrontasz, a Git meg tud menteni. A legfontosabb, hogy soha ne törölj fájlokat kézzel a fájlkezelőben, ha valami elcsúszott.
+
+### Módosítások eldobása (Még nem volt commit)
+
+Átírtál egy fájlt, de rájöttél, hogy rossz az egész, és szeretnéd visszakapni az utolsó mentett állapotot.
+
+<Cmd>git restore index.html</Cmd>
+
+### Biztonságos visszavonás (git revert)
+
+Commitoltál egy hibás kódot, esetleg már fel is toltad GitHubra. Soha ne töröld a commitot! Helyette használd a revertet. Ez létrehoz egy ÚJ commitot, ami pontosan az ellentéte a hibásnak (kiveszi azokat a sorokat, amiket betettél). Így a történelem tiszta marad.
+
+<Cmd>{'git revert <commit-hash-kódja>'}</Cmd>
+
+### Félrerakás későbbre (git stash)
+
+Dolgozol valamin, de a főnököd szól, hogy azonnal javíts ki egy hibát a main ágon. Nem akarod félkészen commitolni a mostani munkád, de ágat sem válthatsz mentetlen kóddal. A stash beteszi egy "fiókba" a módosításaidat, és kitisztítja a munkaterületet.
+
+<Cmd>{[
+  'git stash',
+  'git stash pop'
+]}</Cmd>
+
+Amikor kész vagy a javítással és visszatértél az ágadra, a `git stash pop` paranccsal előveszed a fiókból a félbehagyott munkádat.
+
+</article>
+
+<div className="pt-10 border-t border-slate-800 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-slate-500 italic mt-12">
+  <p>Utoljára módosítva: 2024.04.19.</p>
+  <p>Készítette: Czeglédi Dávid</p>
+</div>
+
+</div>
