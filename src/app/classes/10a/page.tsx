@@ -85,7 +85,7 @@ export default function TizedikA() {
                   className="px-5 py-2.5 bg-cyan-600/10 hover:bg-cyan-600/20 text-cyan-400 border border-cyan-600/30 rounded-xl text-sm font-semibold transition-all flex items-center justify-center gap-2 group"
                 >
                   <span className="text-lg group-hover:scale-105 transition-transform">💾</span> 
-                  <span>.pkt fál letöltése</span>
+                  <span>.pkt fájl letöltése</span>
                 </a>
 
                 <Link
