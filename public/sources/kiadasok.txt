@@ -1,0 +1,10 @@
+08:12;Billentyűzet;8900
+09:45;Egér;4500
+10:20;Monitor;55000
+11:05;Egér;4500
+12:30;Fejhallgató;12500
+14:15;Webkamera;18900
+15:40;USB Hub;3200
+16:22;SSD 1TB;28000
+17:10;Egér;4500
+18:05;Billentyűzet;8900

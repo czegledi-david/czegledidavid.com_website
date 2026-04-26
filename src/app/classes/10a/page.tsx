@@ -43,13 +43,32 @@ export default function TizedikA() {
                 </div>
               </div>
               
-              <div className="flex gap-3 w-full md:w-auto">
-                <span className="px-5 py-2.5 bg-slate-800/50 text-slate-500 border border-slate-700/50 rounded-xl text-sm font-semibold cursor-not-allowed">
-                  Feladatlap (Hamarosan...)
-                </span>
-                <span className="px-5 py-2.5 bg-slate-800/50 text-slate-500 border border-slate-700/50 rounded-xl text-sm font-semibold cursor-not-allowed">
-                  Megoldás (Készül...)
-                </span>
+              <div className="flex flex-wrap gap-3 w-full md:w-auto">
+                <a 
+                  href="/lessons/agazati_python.pdf" 
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="px-5 py-2.5 bg-yellow-600/10 hover:bg-yellow-600/20 text-yellow-500 border border-yellow-600/30 rounded-xl text-sm font-semibold transition-all flex items-center justify-center gap-2 group"
+                >
+                  <span className="text-lg group-hover:scale-105 transition-transform">📄</span> 
+                  <span>Feladatlap</span>
+                </a>
+
+                <a 
+                  href="/sources/kiadasok.txt" 
+                  download
+                  className="px-5 py-2.5 bg-yellow-600/10 hover:bg-yellow-600/20 text-yellow-500 border border-yellow-600/30 rounded-xl text-sm font-semibold transition-all flex items-center justify-center gap-2 group"
+                >
+                  <span className="text-lg group-hover:scale-105 transition-transform">💾</span> 
+                  <span>.txt fájl letöltése</span>
+                </a>
+
+                <Link
+                  href="/classes/10a/solution10a"
+                  className="px-5 py-2.5 bg-yellow-500 hover:bg-yellow-400 text-slate-950 rounded-xl text-sm font-bold transition-all shadow-[0_0_15px_rgba(234,179,8,0.2)] flex items-center justify-center"
+                >
+                  Megoldás (Online)
+                </Link>
               </div>
             </div>
           </div>
