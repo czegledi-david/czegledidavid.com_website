@@ -106,7 +106,7 @@ export default function TizenharmadikASegédletek() {
               className="bg-slate-800/50 hover:bg-slate-700 text-slate-200 border border-slate-700/50 border-dashed px-5 py-3 rounded-xl text-sm transition-all flex items-center justify-center sm:justify-start gap-3 shadow-sm w-full sm:w-fit group"
             >
               <span className="text-lg group-hover:scale-105 transition-transform">📥</span> 
-              <span>peksegek.txt letöltése</span>
+              <span>pekseg.txt letöltése</span>
             </a>
           </div>
         </div>
