@@ -38,7 +38,7 @@ export default function Home() {
         </Link>
 
         <Link 
-          href="/tananyagok" 
+          href="/classes" 
           className="group block p-8 bg-[#0d1117] border border-slate-800 rounded-2xl hover:border-blue-500/50 hover:bg-slate-900/80 transition-all duration-300 shadow-xl hover:shadow-blue-500/10 flex flex-col justify-between h-full"
         >
           <div className="space-y-4">
